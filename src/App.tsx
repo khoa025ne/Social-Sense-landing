@@ -27,7 +27,7 @@ import { PostStack } from "./components/PostStack";
 // Soft Blue : #60A5FA  (Xanh dương nhạt)
 
 // ----- FAQ Item -----
-const FAQItem = ({ question }: { question: string }) => {
+const FAQItem: React.FC<{ question: string }> = ({ question }) => {
   const [open, setOpen] = useState(false);
   return (
     <button
