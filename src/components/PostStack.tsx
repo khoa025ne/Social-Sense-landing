@@ -76,43 +76,18 @@ export const PostStack = () => {
                 stiffness: 300,
                 damping: 30,
               }}
-              className={`absolute w-[265px] h-[340px] rounded-[24px] shadow-xl flex flex-col justify-between p-6 ${card.color} ${
+              className={`absolute w-[265px] h-[320px] rounded-[24px] shadow-xl flex flex-col justify-center p-7 ${card.color} ${
                 isTop ? "border border-blue-200/40 shadow-2xl ring-1 ring-blue-400/20" : "opacity-90"
               }`}
             >
-              {/* Top Section: Badge & External Link */}
-              <div className="flex items-center justify-between">
-                <span className={`text-[9px] font-extrabold px-3 py-1 rounded-full tracking-wider ${card.badgeBg}`}>
-                  {card.badge}
-                </span>
-
-                <a
-                  href={card.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  title="Mở bài viết chi tiết"
-                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold transition-all ${card.btnStyle}`}
-                >
-                  <span>Mở bài viết</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-
               {/* Main Content: Title & Short Meaningful Paragraph */}
-              <div className="my-auto py-2">
-                <h3 className={`text-[19px] font-black leading-snug tracking-tight uppercase mb-3 ${card.textColor}`}>
+              <div className="flex flex-col justify-center">
+                <h3 className={`text-[20px] font-black leading-snug tracking-tight uppercase mb-4 ${card.textColor}`}>
                   {card.title}
                 </h3>
-                <p className={`text-[12px] font-medium leading-relaxed ${card.descColor}`}>
+                <p className={`text-[13px] font-medium leading-relaxed ${card.descColor}`}>
                   {card.description}
                 </p>
-              </div>
-
-              {/* Bottom Footer hint */}
-              <div className="pt-3 border-t border-slate-200/20 flex items-center justify-between text-[10px] font-bold opacity-60">
-                <span>SOCIAL SENSE</span>
-                <span>CHẠM ĐỂ LẬT ➔</span>
               </div>
             </motion.div>
           );

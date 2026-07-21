@@ -27,20 +27,44 @@ import { PostStack } from "./components/PostStack";
 // Soft Blue : #60A5FA  (Xanh dương nhạt)
 
 // ----- FAQ Item -----
-const FAQItem: React.FC<{ question: string }> = ({ question }) => {
+const faqList = [
+  {
+    question: "Social Sense tương thích với thiết bị nào?",
+    answer: "Social Sense hiện tại tối ưu tốt nhất cho hệ điều hành Android (hỗ trợ Android 8.0 trở lên). Bạn có thể tải trực tiếp bản thử nghiệm APK về thiết bị để cài đặt ngay."
+  },
+  {
+    question: "Làm thế nào để cá nhân hoá AI?",
+    answer: "Bạn chỉ cần cung cấp các bài viết mẫu hoặc lựa chọn giọng văn mong muốn (hài hước, chuyên nghiệp, truyền cảm hứng...). AI sẽ tự học và tinh chỉnh phong cách viết đúng theo thương hiệu của bạn."
+  },
+  {
+    question: "Dữ liệu của tôi có bảo mật không?",
+    answer: "Tuyệt đối an toàn. Tất cả dữ liệu bài viết, ý tưởng và thông tin cá nhân của bạn đều được mã hóa theo tiêu chuẩn bảo mật cao và không chia sẻ cho bên thứ ba."
+  },
+  {
+    question: "Tôi có thể dùng thử miễn phí không?",
+    answer: "Hoàn toàn miễn phí! Bạn có thể tải tệp APK và trải nghiệm các tính năng cốt lõi của Social Sense mà không cần đăng ký thẻ thanh toán."
+  }
+];
+
+const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
   const [open, setOpen] = useState(false);
   return (
-    <button
-      onClick={() => setOpen(!open)}
-      className="w-full h-12 bg-white rounded-2xl flex items-center justify-between px-5 transition-all shadow-sm"
-      style={{ border: "1px solid #BFDBFE" }}
-    >
-      <span className="text-xs font-semibold text-slate-600 text-left line-clamp-1">{question}</span>
-      <ChevronDown
-        className={`w-4 h-4 flex-shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-        style={{ color: "#3B82F6" }}
-      />
-    </button>
+    <div className="w-full bg-white rounded-2xl overflow-hidden shadow-sm transition-all duration-300" style={{ border: "1px solid #BFDBFE" }}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full min-h-[50px] flex items-center justify-between px-5 text-left py-3"
+      >
+        <span className="text-[13px] font-semibold text-slate-700 leading-snug pr-2">{question}</span>
+        <ChevronDown
+          className={`w-4 h-4 flex-shrink-0 transition-transform duration-300 ${open ? "rotate-180 text-blue-600" : "text-slate-400"}`}
+        />
+      </button>
+      {open && (
+        <div className="px-5 pb-4 pt-1 text-[11.5px] text-slate-500 leading-relaxed border-t border-blue-50 bg-blue-50/30">
+          {answer}
+        </div>
+      )}
+    </div>
   );
 };
 
@@ -273,12 +297,9 @@ export default function App() {
           <p className="text-[10px] font-bold tracking-widest" style={{ color: "#3B82F6" }}>CÁC CÂU HỎI THƯỜNG GẶP</p>
         </div>
         <div className="w-full rounded-3xl p-4 space-y-3" style={{ background: "#DBEAFE", border: "1px solid #BFDBFE" }}>
-          {[
-            "Social Sense tương thích với thiết bị nào?",
-            "Làm thế nào để cá nhân hoá AI?",
-            "Dữ liệu của tôi có bảo mật không?",
-            "Tôi có thể dùng thử miễn phí không?",
-          ].map((q, i) => <FAQItem key={i} question={q} />)}
+          {faqList.map((item, i) => (
+            <FAQItem key={i} question={item.question} answer={item.answer} />
+          ))}
         </div>
       </section>
 
