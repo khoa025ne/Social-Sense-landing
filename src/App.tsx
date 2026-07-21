@@ -368,18 +368,18 @@ export default function App() {
         </header>
 
         {/* DESKTOP HERO */}
-        <section id="about-desktop" className="pt-20 pb-24 px-8 max-w-7xl mx-auto w-full grid grid-cols-12 gap-12 items-center">
-          <div className="col-span-7 flex flex-col items-start pr-6">
-            <h1 className="text-5xl lg:text-6xl font-black text-slate-900 leading-[1.15] tracking-tight mb-8">
+        <section id="about-desktop" className="py-20 px-8 max-w-7xl mx-auto w-full grid grid-cols-12 gap-12 items-center">
+          <div className="col-span-7 flex flex-col items-start pr-4">
+            <h1 className="text-5xl lg:text-6xl font-black text-slate-900 leading-[1.15] tracking-tight mb-6">
               Trợ lí tí hon <br />
               <span className="text-blue-600">cho các nhà sáng tạo</span>
             </h1>
 
-            <p className="text-lg text-slate-600 leading-relaxed mb-10 max-w-xl">
+            <p className="text-base lg:text-lg text-slate-600 leading-relaxed mb-8 max-w-xl">
               Social Sense mang tới bộ công cụ AI thông minh hỗ trợ bạn lên ý tưởng, tự động tạo bài viết hấp dẫn, phân tích chỉ số truyền thông và nắm bắt sớm các xu hướng nóng nhất.
             </p>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-5">
               <a
                 href="https://drive.google.com/drive/folders/1Cyp88viSs6DUMPWnxFKvtknxyuWIaxMy"
                 target="_blank"
@@ -441,9 +441,9 @@ export default function App() {
         </section>
 
         {/* DESKTOP CORE BELIEFS */}
-        <section className="py-24 bg-gradient-to-b from-[#EFF6FF] via-[#DBEAFE]/40 to-[#EFF6FF]">
+        <section className="py-20 bg-gradient-to-b from-[#EFF6FF] via-[#DBEAFE]/40 to-[#EFF6FF]">
           <div className="max-w-7xl mx-auto px-8 flex flex-col items-center">
-            <div className="relative w-full max-w-[500px]" style={{ aspectRatio: "1 / 1" }}>
+            <div className="relative w-full max-w-[460px]" style={{ aspectRatio: "1 / 1" }}>
               {[
                 { Icon: Mic,         pos: { left: "4%",  top: "43%",   transform: "translateY(-50%)" }, size: "14%" },
                 { Icon: Heart,       pos: { left: "20%", top: "12%"  },                                 size: "15%" },
@@ -467,7 +467,7 @@ export default function App() {
                 </div>
               ))}
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center px-12 text-center">
+              <div className="absolute inset-0 flex flex-col items-center justify-center px-10 text-center">
                 <p className="text-base font-bold mb-3 tracking-wide" style={{ color: "#3B82F6" }}>Chúng tôi tin rằng</p>
                 <h2 className="text-3xl lg:text-4xl font-extrabold leading-snug text-slate-800">
                   mỗi ý tưởng đều xứng đáng<br />được bắt đầu
@@ -478,15 +478,16 @@ export default function App() {
         </section>
 
         {/* DESKTOP FEATURES */}
-        <section id="features-desktop" className="py-24 px-8 max-w-7xl mx-auto w-full">
-          <div className="text-center mb-16">
-            <span className="px-6 py-2.5 rounded-full text-sm font-extrabold tracking-widest bg-blue-100 text-blue-600 border border-blue-200 inline-block">
+        <section id="features-desktop" className="py-20 px-8 max-w-7xl mx-auto w-full">
+          <div className="text-center mb-14">
+            <span className="px-6 py-2.5 rounded-full text-xs lg:text-sm font-extrabold tracking-widest bg-blue-100 text-blue-600 border border-blue-200 inline-block">
               SOCIAL SENSE CÓ NHỮNG GÌ?
             </span>
           </div>
 
-          <div className="grid grid-cols-3 gap-8">
-            <div className="bg-white rounded-3xl p-8 border border-blue-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1.5 duration-300 flex flex-col justify-between">
+          <div className="grid grid-cols-3 gap-8 items-stretch">
+            {/* Feature 1 */}
+            <div className="bg-white rounded-3xl p-8 border border-blue-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1.5 duration-300 flex flex-col justify-between h-full">
               <div>
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style={{ background: "linear-gradient(135deg,#60A5FA,#3B82F6)" }}>
                   <ImageIcon className="text-white w-8 h-8" />
@@ -497,7 +498,8 @@ export default function App() {
               <div className="h-1.5 w-full rounded-full mt-8" style={{ background: "linear-gradient(90deg,#60A5FA,#93C5FD)" }} />
             </div>
 
-            <div className="bg-white rounded-3xl p-8 border border-blue-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1.5 duration-300 flex flex-col justify-between">
+            {/* Feature 2 */}
+            <div className="bg-white rounded-3xl p-8 border border-blue-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1.5 duration-300 flex flex-col justify-between h-full">
               <div>
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style={{ background: "linear-gradient(135deg,#3B82F6,#2563EB)" }}>
                   <BarChart2 className="text-white w-8 h-8" />
@@ -508,7 +510,8 @@ export default function App() {
               <div className="h-1.5 w-full rounded-full mt-8" style={{ background: "linear-gradient(90deg,#3B82F6,#60A5FA)" }} />
             </div>
 
-            <div className="bg-white rounded-3xl p-8 border border-blue-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1.5 duration-300 flex flex-col justify-between">
+            {/* Feature 3 */}
+            <div className="bg-white rounded-3xl p-8 border border-blue-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1.5 duration-300 flex flex-col justify-between h-full">
               <div>
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style={{ background: "linear-gradient(135deg,#93C5FD,#60A5FA)" }}>
                   <Sparkles className="text-white w-8 h-8" />
@@ -522,9 +525,9 @@ export default function App() {
         </section>
 
         {/* DESKTOP POSTS */}
-        <section id="posts-desktop" className="py-24 bg-blue-100/60 border-y border-blue-200/50">
+        <section id="posts-desktop" className="py-20 bg-blue-100/60 border-y border-blue-200/50">
           <div className="max-w-7xl mx-auto px-8 flex flex-col items-center">
-            <span className="px-6 py-2.5 rounded-full text-sm font-extrabold tracking-widest bg-white text-blue-600 border border-blue-200 mb-14 shadow-sm">
+            <span className="px-6 py-2.5 rounded-full text-xs lg:text-sm font-extrabold tracking-widest bg-white text-blue-600 border border-blue-200 mb-14 shadow-sm">
               CÁC BÀI VIẾT MỚI
             </span>
             <div className="w-full max-w-4xl flex justify-center">
@@ -534,12 +537,12 @@ export default function App() {
         </section>
 
         {/* DESKTOP FAQ */}
-        <section id="faq-desktop" className="py-24 px-8 max-w-7xl mx-auto w-full flex flex-col items-center">
-          <span className="px-6 py-2.5 rounded-full text-sm font-extrabold tracking-widest bg-blue-100 text-blue-600 border border-blue-200 mb-12">
+        <section id="faq-desktop" className="py-20 px-8 max-w-7xl mx-auto w-full flex flex-col items-center">
+          <span className="px-6 py-2.5 rounded-full text-xs lg:text-sm font-extrabold tracking-widest bg-blue-100 text-blue-600 border border-blue-200 mb-10">
             CÁC CÂU HỎI THƯỜNG GẶP
           </span>
 
-          <div className="w-full max-w-4xl bg-blue-100/60 rounded-3xl p-8 border border-blue-200 space-y-4">
+          <div className="w-full max-w-4xl bg-blue-100/60 rounded-3xl p-6 lg:p-8 border border-blue-200 space-y-4">
             {faqList.map((item, i) => (
               <FAQItem key={i} question={item.question} answer={item.answer} />
             ))}
@@ -547,18 +550,18 @@ export default function App() {
         </section>
 
         {/* DESKTOP FOOTER */}
-        <footer id="contact-desktop" className="bg-[#3B82F6] text-white pt-20 pb-12 px-8 mt-auto">
-          <div className="max-w-7xl mx-auto grid grid-cols-12 gap-12 items-start pb-16 border-b border-white/20">
-            <div className="col-span-5 pr-8">
-              <img src="/logo.png" alt="Social Sense" className="h-11 w-auto mb-6 object-contain" style={{ filter: "brightness(0) invert(1)", opacity: 0.95 }} />
+        <footer id="contact-desktop" className="bg-[#3B82F6] text-white pt-16 pb-12 px-8 mt-auto">
+          <div className="max-w-7xl mx-auto grid grid-cols-12 gap-12 items-center pb-12 border-b border-white/20">
+            <div className="col-span-5 pr-6">
+              <img src="/logo.png" alt="Social Sense" className="h-11 w-auto mb-5 object-contain" style={{ filter: "brightness(0) invert(1)", opacity: 0.95 }} />
               <p className="text-sm text-blue-50 leading-relaxed max-w-md">
                 Social Sense - Công cụ hỗ trợ các nhà sáng tạo nội dung tự động tạo bài viết, phân tích chỉ số và theo dõi xu hướng hiệu quả nhất.
               </p>
             </div>
 
-            <div className="col-span-7 grid grid-cols-2 gap-8">
+            <div className="col-span-7 grid grid-cols-2 gap-8 items-start">
               <div>
-                <h3 className="text-base font-bold mb-4 text-white">Liên hệ với chúng tôi</h3>
+                <h3 className="text-base font-bold mb-3 text-white">Liên hệ với chúng tôi</h3>
                 <div className="flex h-12 rounded-full overflow-hidden shadow-md">
                   <div className="w-24 flex items-center justify-center text-xs font-bold shrink-0 bg-white/20 text-white">
                     Gmail
@@ -572,7 +575,7 @@ export default function App() {
               </div>
 
               <div>
-                <h3 className="text-base font-bold mb-4 text-white">Đăng ký bản thử nghiệm</h3>
+                <h3 className="text-base font-bold mb-3 text-white">Đăng ký bản thử nghiệm</h3>
                 <form onSubmit={handleSubmit} className="flex h-12 rounded-full overflow-hidden shadow-md">
                   <div className="w-24 flex items-center justify-center text-xs font-bold shrink-0 bg-white/20 text-white">
                     Gmail
