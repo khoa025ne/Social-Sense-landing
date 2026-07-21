@@ -1,0 +1,6 @@
+{
+  "name": "Social Sense Landing Page",
+  "description": "A modern, responsive landing page for the Social Sense creator assistant application.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
