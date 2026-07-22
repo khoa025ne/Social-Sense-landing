@@ -46,7 +46,7 @@ const faqList = [
   }
 ];
 
-const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [open, setOpen] = useState(false);
   return (
     <div className="w-full bg-white rounded-2xl overflow-hidden shadow-sm transition-all duration-300" style={{ border: "1px solid #BFDBFE" }}>
