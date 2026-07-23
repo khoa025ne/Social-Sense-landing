@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Check, Sparkles, Zap } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 
 export const PricingSection: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<"yearly" | "monthly">("yearly");
@@ -24,7 +24,6 @@ export const PricingSection: React.FC = () => {
         checkIconBg: "bg-white text-[#2563EB]",
         badge: "Tiết kiệm 56%",
         badgeBg: "bg-blue-100 text-blue-700 border-blue-200",
-        buttonStyle: "bg-[#3B82F6] hover:bg-blue-600 text-white shadow-md shadow-blue-500/20",
         features: [
           "50 lượt tạo content/ngày",
           "Ưu tiên xử lý AI",
@@ -49,7 +48,6 @@ export const PricingSection: React.FC = () => {
         checkIconBg: "bg-[#3B82F6] text-white",
         badge: "Khuyên dùng",
         badgeBg: "bg-white/20 text-white border-white/30 backdrop-blur-md",
-        buttonStyle: "bg-white hover:bg-blue-50 text-[#2563EB] shadow-lg font-extrabold",
         features: [
           "300 lượt tạo content/ngày",
           "Custom AI theo yêu cầu",
@@ -76,7 +74,6 @@ export const PricingSection: React.FC = () => {
         checkIconBg: "bg-white text-[#2563EB]",
         badge: "Tiết kiệm 55%",
         badgeBg: "bg-blue-100 text-blue-700 border-blue-200",
-        buttonStyle: "bg-[#3B82F6] hover:bg-blue-600 text-white shadow-md shadow-blue-500/20",
         features: [
           "50 lượt tạo content/ngày",
           "Ưu tiên xử lý AI",
@@ -101,7 +98,6 @@ export const PricingSection: React.FC = () => {
         checkIconBg: "bg-[#3B82F6] text-white",
         badge: "Khuyên dùng - Tiết kiệm 50%",
         badgeBg: "bg-white/20 text-white border-white/30 backdrop-blur-md",
-        buttonStyle: "bg-white hover:bg-blue-50 text-[#2563EB] shadow-lg font-extrabold",
         features: [
           "300 lượt tạo content/ngày",
           "Custom AI theo yêu cầu",
@@ -113,13 +109,6 @@ export const PricingSection: React.FC = () => {
   };
 
   const currentPlans = pricingData[billingCycle];
-
-  const handleRegister = (planName: string) => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <div className="w-full flex flex-col items-center max-w-5xl mx-auto px-4">
@@ -203,7 +192,7 @@ export const PricingSection: React.FC = () => {
               </h3>
 
               {/* Features Container Box */}
-              <div className={`rounded-[22px] p-5 mb-6 flex-1 flex flex-col justify-center space-y-3.5 ${plan.featuresBg}`}>
+              <div className={`rounded-[22px] p-5 flex-1 flex flex-col justify-center space-y-3.5 ${plan.featuresBg}`}>
                 {plan.features.map((feature, fIdx) => (
                   <div key={fIdx} className="flex items-center gap-3">
                     <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 font-bold ${plan.checkIconBg}`}>
@@ -215,16 +204,6 @@ export const PricingSection: React.FC = () => {
                   </div>
                 ))}
               </div>
-
-              {/* CTA Button */}
-              <button
-                type="button"
-                onClick={() => handleRegister(plan.name)}
-                className={`w-full py-3.5 rounded-full text-xs lg:text-sm font-extrabold transition-all duration-200 active:scale-95 cursor-pointer flex items-center justify-center gap-2 ${plan.buttonStyle}`}
-              >
-                <span>ĐĂNG KÝ NGAY</span>
-                <Zap className="w-4 h-4 fill-current" />
-              </button>
             </motion.div>
           ))}
         </AnimatePresence>
