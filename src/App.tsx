@@ -19,6 +19,9 @@ import {
   BarChart2,
   Send,
   Lightbulb,
+  Zap,
+  Target,
+  TrendingUp,
 } from "lucide-react";
 import { PostStack } from "./components/PostStack";
 
@@ -154,7 +157,7 @@ export default function App() {
             />
           </div>
 
-          {/* White CTA card (Mobile with 'Đăng ký trải nghiệm' button) */}
+          {/* White CTA card (Mobile) */}
           <div className="bg-white w-full relative px-6 pt-8 pb-7 rounded-t-[30px]" style={{ marginTop: "180px", zIndex: 20, boxShadow: "0 -4px 20px rgba(59,130,246,0.12)" }}>
             <div className="flex flex-col gap-3 w-full max-w-[320px] mx-auto">
               <a
@@ -185,7 +188,6 @@ export default function App() {
                 </span>
               </a>
 
-              {/* Added explicit 'Đăng ký trải nghiệm' button for mobile */}
               <button
                 type="button"
                 onClick={focusRegistration}
@@ -197,33 +199,39 @@ export default function App() {
           </div>
         </section>
 
-        {/* CORE BELIEFS (Mobile) */}
-        <section className="py-8 flex flex-col items-center z-10" style={{ background: "#EFF6FF" }}>
-          <div className="relative w-full max-w-[420px]" style={{ aspectRatio: "1 / 1" }}>
-            {[
-              { Icon: Mic,         pos: { left: "4%",  top: "43%",   transform: "translateY(-50%)" }, size: "13%" },
-              { Icon: Heart,       pos: { left: "20%", top: "13%"  },                                 size: "15%" },
-              { Icon: ShoppingBag, pos: { right:"20%", top: "10%"  },                                 size: "15%" },
-              { Icon: Bug,         pos: { right:"4%",  top: "30%"  },                                 size: "13%" },
-              { Icon: Download,    pos: { right:"5%",  top: "57%"  },                                 size: "13%" },
-              { Icon: Monitor,     pos: { right:"20%", bottom:"9%" },                                 size: "16%" },
-              { Icon: Headphones,  pos: { left: "20%", bottom:"9%" },                                 size: "16%" },
-              { Icon: Camera,      pos: { left: "4%",  top: "57%"  },                                 size: "13%" },
-            ].map(({ Icon, pos, size }, i) => (
-              <div key={i} className="absolute flex items-center justify-center rounded-full" style={{ width: size, aspectRatio: "1/1", ...pos, background: "#3B82F6", boxShadow: "0 2px 8px rgba(59,130,246,0.25)" }}>
-                <Icon className="text-white" style={{ width: "45%", height: "45%" }} />
+        {/* CORE BELIEFS (Mobile Redesigned - No overlap, clear spacing) */}
+        <section className="py-8 px-4 flex flex-col items-center z-10" style={{ background: "#EFF6FF" }}>
+          <div className="w-full rounded-3xl bg-gradient-to-b from-blue-100/80 to-sky-50 border border-blue-200/60 p-6 flex flex-col items-center shadow-sm">
+            <div className="relative w-full max-w-[340px]" style={{ aspectRatio: "1 / 1" }}>
+              {[
+                { Icon: Mic,         pos: { left: "1%",  top: "42%",   transform: "translateY(-50%)" }, size: "14%" },
+                { Icon: Heart,       pos: { left: "16%", top: "8%"   },                                 size: "15%" },
+                { Icon: ShoppingBag, pos: { right:"16%", top: "8%"   },                                 size: "15%" },
+                { Icon: Bug,         pos: { right:"1%",  top: "42%",   transform: "translateY(-50%)" }, size: "14%" },
+                { Icon: Download,    pos: { right:"2%",  bottom:"18%" },                                size: "14%" },
+                { Icon: Monitor,     pos: { right:"20%", bottom:"2%"  },                                size: "16%" },
+                { Icon: Headphones,  pos: { left: "20%", bottom:"2%"  },                                size: "16%" },
+                { Icon: Camera,      pos: { left: "2%",  bottom:"18%" },                                size: "14%" },
+              ].map(({ Icon, pos, size }, i) => (
+                <div key={i} className="absolute flex items-center justify-center rounded-full shadow-md" style={{ width: size, aspectRatio: "1/1", ...pos, background: "#3B82F6" }}>
+                  <Icon className="text-white" style={{ width: "45%", height: "45%" }} />
+                </div>
+              ))}
+              
+              <div className="absolute inset-0 flex flex-col items-center justify-center px-12 text-center pointer-events-none">
+                <span className="px-2.5 py-0.5 rounded-full bg-blue-600 text-white font-extrabold text-[9px] mb-2 tracking-wider shadow-sm">
+                  SỨ MỆNH CỦA CHÚNG TÔI
+                </span>
+                <h2 className="text-[17px] font-black leading-[1.3] text-slate-800">
+                  Mỗi ý tưởng đều<br />
+                  <span className="text-blue-600">xứng đáng được bắt đầu</span>
+                </h2>
               </div>
-            ))}
-            <div className="absolute inset-0 flex flex-col items-center justify-center px-12 text-center">
-              <p className="text-[11px] font-bold mb-1.5" style={{ color: "#3B82F6" }}>Chúng tôi tin rằng</p>
-              <h2 className="text-[20px] font-bold leading-[1.25] text-slate-800">
-                mỗi ý tưởng đều xứng đáng<br />được bắt đầu
-              </h2>
             </div>
           </div>
         </section>
 
-        {/* FEATURES (Mobile with rich visual images) */}
+        {/* FEATURES (Mobile) */}
         <section id="features-mobile" className="flex flex-col items-center w-full z-10" style={{ background: "#EFF6FF" }}>
           <div className="mt-2 mb-6 px-5 py-2 rounded-full bg-blue-100 border border-blue-200 shadow-sm">
             <p className="text-[10px] font-extrabold tracking-widest text-blue-600">SOCIAL SENSE CÓ NHỮNG GÌ?</p>
@@ -304,7 +312,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* FOOTER (Mobile with Visible Submit Button) */}
+        {/* FOOTER (Mobile) */}
         <section id="contact" className="pt-10 pb-8 px-6 text-white w-full z-10" style={{ background: "#3B82F6" }}>
           <div className="flex gap-4 items-start mb-8">
             <img src="/logo.png" alt="Social Sense" className="h-8 w-auto mt-1 object-contain" style={{ filter: "brightness(0) invert(1)", opacity: 0.95 }} />
@@ -345,7 +353,6 @@ export default function App() {
                     className="w-full outline-none bg-transparent text-xs text-slate-700 placeholder-slate-400"
                   />
                 </div>
-                {/* Visible Submit Button */}
                 <button
                   type="submit"
                   className="px-4 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold text-xs rounded-full flex items-center gap-1 transition-all shrink-0 shadow-sm"
@@ -370,7 +377,7 @@ export default function App() {
          ════════════════════════════════════════════════════════════════ */}
       <div className="hidden md:flex flex-col w-full min-h-screen" style={{ background: "#EFF6FF" }}>
         
-        {/* DESKTOP HEADER (Sticky Nav) */}
+        {/* DESKTOP HEADER */}
         <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/80 border-b border-blue-100 shadow-sm">
           <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -480,38 +487,92 @@ export default function App() {
           </div>
         </section>
 
-        {/* DESKTOP CORE BELIEFS */}
-        <section className="py-20 bg-gradient-to-b from-[#EFF6FF] via-[#DBEAFE]/40 to-[#EFF6FF]">
-          <div className="max-w-7xl mx-auto px-8 flex flex-col items-center">
-            <div className="relative w-full max-w-[460px]" style={{ aspectRatio: "1 / 1" }}>
-              {[
-                { Icon: Mic,         pos: { left: "4%",  top: "43%",   transform: "translateY(-50%)" }, size: "14%" },
-                { Icon: Heart,       pos: { left: "20%", top: "12%"  },                                 size: "15%" },
-                { Icon: ShoppingBag, pos: { right:"20%", top: "10%"  },                                 size: "15%" },
-                { Icon: Bug,         pos: { right:"4%",  top: "30%"  },                                 size: "14%" },
-                { Icon: Download,    pos: { right:"5%",  top: "57%"  },                                 size: "14%" },
-                { Icon: Monitor,     pos: { right:"20%", bottom:"8%" },                                 size: "16%" },
-                { Icon: Headphones,  pos: { left: "20%", bottom:"8%" },                                 size: "16%" },
-                { Icon: Camera,      pos: { left: "4%",  top: "57%"  },                                 size: "14%" },
-              ].map(({ Icon, pos, size }, i) => (
-                <div
-                  key={i}
-                  className="absolute flex items-center justify-center rounded-full transition-transform hover:scale-125 duration-300 cursor-pointer shadow-lg"
-                  style={{
-                    width: size, aspectRatio: "1/1", ...pos,
-                    background: "#3B82F6",
-                    boxShadow: "0 6px 16px rgba(59,130,246,0.30)",
-                  }}
-                >
-                  <Icon className="text-white" style={{ width: "48%", height: "48%" }} />
-                </div>
-              ))}
+        {/* DESKTOP CORE BELIEFS (Redesigned into Rich 2-Column Showcase to fix whitespace & overlaps) */}
+        <section className="py-16 px-8 max-w-7xl mx-auto w-full">
+          <div className="w-full bg-white/80 backdrop-blur-xl rounded-[36px] border border-blue-100 shadow-xl p-10 lg:p-14 relative overflow-hidden">
+            <div className="absolute -right-20 -top-20 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl -z-10 pointer-events-none" />
+            <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-sky-200/40 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center px-10 text-center">
-                <p className="text-base font-bold mb-3 tracking-wide" style={{ color: "#3B82F6" }}>Chúng tôi tin rằng</p>
-                <h2 className="text-3xl lg:text-4xl font-extrabold leading-snug text-slate-800">
-                  mỗi ý tưởng đều xứng đáng<br />được bắt đầu
-                </h2>
+            <div className="grid grid-cols-12 gap-10 items-center">
+              {/* Left Column: Interactive Icon Wheel with Centered Glass Card */}
+              <div className="col-span-6 relative flex items-center justify-center min-h-[460px]">
+                <div className="relative w-[440px] h-[440px] flex items-center justify-center">
+                  {[
+                    { Icon: Mic,         pos: { left: "0%",   top: "43%", transform: "translateY(-50%)" }, size: "14%" },
+                    { Icon: Heart,       pos: { left: "15%",  top: "5%"   },                                size: "15%" },
+                    { Icon: ShoppingBag, pos: { right:"15%",  top: "5%"   },                                size: "15%" },
+                    { Icon: Bug,         pos: { right:"0%",   top: "43%", transform: "translateY(-50%)" }, size: "14%" },
+                    { Icon: Download,    pos: { right:"4%",   bottom:"16%" },                               size: "14%" },
+                    { Icon: Monitor,     pos: { right:"22%",  bottom:"0%"  },                               size: "16%" },
+                    { Icon: Headphones,  pos: { left: "22%",  bottom:"0%"  },                               size: "16%" },
+                    { Icon: Camera,      pos: { left: "4%",   bottom:"16%" },                               size: "14%" },
+                  ].map(({ Icon, pos, size }, i) => (
+                    <div
+                      key={i}
+                      className="absolute flex items-center justify-center rounded-full transition-transform hover:scale-125 duration-300 cursor-pointer shadow-lg z-20"
+                      style={{
+                        width: size, aspectRatio: "1/1", ...pos,
+                        background: "#3B82F6",
+                        boxShadow: "0 6px 18px rgba(59,130,246,0.35)",
+                      }}
+                    >
+                      <Icon className="text-white" style={{ width: "48%", height: "48%" }} />
+                    </div>
+                  ))}
+
+                  {/* Centered Glass Card - Perfectly constrained so NO text overlaps icons */}
+                  <div className="w-[260px] bg-white/90 backdrop-blur-md p-6 rounded-3xl border border-blue-200/70 shadow-lg text-center flex flex-col items-center justify-center z-10">
+                    <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-600 font-extrabold text-[10px] tracking-wider mb-2">
+                      SỨ MỆNH CỦA CHÚNG TÔI
+                    </span>
+                    <h2 className="text-xl lg:text-2xl font-black text-slate-800 leading-snug">
+                      Mỗi ý tưởng đều<br />
+                      <span className="text-blue-600">xứng đáng được bắt đầu</span>
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: 3 Value Highlight Cards filling whitespace */}
+              <div className="col-span-6 flex flex-col justify-center space-y-5 pl-4">
+                <div className="mb-2">
+                  <span className="text-xs font-extrabold tracking-widest text-blue-600 uppercase bg-blue-50 px-4 py-1.5 rounded-full border border-blue-200">
+                    VÌ SAO CHỌN SOCIAL SENSE
+                  </span>
+                  <h3 className="text-2xl lg:text-3xl font-extrabold text-slate-900 mt-3 leading-snug">
+                    Giải pháp toàn diện cho ý tưởng của bạn
+                  </h3>
+                </div>
+
+                <div className="bg-white rounded-2xl p-5 border border-blue-100 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 rounded-xl bg-blue-500 text-white flex items-center justify-center shrink-0 shadow-md">
+                    <Zap className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-bold text-slate-900 mb-1">Tiết kiệm 80% thời gian sáng tạo</h4>
+                    <p className="text-xs text-slate-500 leading-relaxed">Tự động hóa hoàn toàn các công đoạn từ tìm ý tưởng, viết caption cho tới đính kèm hashtag chuẩn trend.</p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-5 border border-blue-100 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 rounded-xl bg-indigo-500 text-white flex items-center justify-center shrink-0 shadow-md">
+                    <Target className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-bold text-slate-900 mb-1">Giọng văn cá nhân hóa 100%</h4>
+                    <p className="text-xs text-slate-500 leading-relaxed">AI học phong cách thương hiệu của riêng bạn qua bài viết mẫu để tạo nội dung chân thực và tự nhiên nhất.</p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-5 border border-blue-100 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 rounded-xl bg-sky-500 text-white flex items-center justify-center shrink-0 shadow-md">
+                    <TrendingUp className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-bold text-slate-900 mb-1">Tối ưu tương tác với báo cáo thông minh</h4>
+                    <p className="text-xs text-slate-500 leading-relaxed">Phân tích sâu các chỉ số kênh giúp bạn chọn mốc thời gian vàng để bài đăng đạt lượng tiếp cận tối đa.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -540,7 +601,6 @@ export default function App() {
                 </div>
                 <p className="text-xs text-slate-500 leading-relaxed mb-4">Gợi ý caption sáng tạo, xây dựng kịch bản video trend và thiết kế hình ảnh độc đáo.</p>
                 
-                {/* Visual Image */}
                 <div className="w-full overflow-hidden rounded-2xl border border-blue-100 shadow-sm">
                   <img src="/card_features.png" alt="Không lo bế tắc" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
@@ -562,7 +622,6 @@ export default function App() {
                 </div>
                 <p className="text-xs text-slate-500 leading-relaxed mb-4">Phân tích hiệu quả kênh, đo lường tương tác giúp bạn tối ưu kế hoạch đăng bài.</p>
                 
-                {/* Visual Image */}
                 <div className="w-full overflow-hidden rounded-2xl border border-blue-100 shadow-sm">
                   <img src="/card_trend.png" alt="Hỗ trợ qua các con số" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
@@ -584,7 +643,6 @@ export default function App() {
                 </div>
                 <p className="text-xs text-slate-500 leading-relaxed mb-4">Huấn luyện giọng văn AI chuẩn theo thương hiệu cá nhân của riêng bạn.</p>
                 
-                {/* Visual Image */}
                 <div className="w-full overflow-hidden rounded-2xl border border-blue-100 shadow-sm">
                   <img src="/card_engagement.png" alt="Xây dựng phong cách" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
@@ -620,7 +678,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* DESKTOP FOOTER (With Visible Submit Button) */}
+        {/* DESKTOP FOOTER */}
         <footer id="contact-desktop" className="bg-[#3B82F6] text-white pt-16 pb-12 px-8 mt-auto">
           <div className="max-w-7xl mx-auto grid grid-cols-12 gap-12 items-center pb-12 border-b border-white/20">
             <div className="col-span-5 pr-6">
@@ -662,7 +720,6 @@ export default function App() {
                       className="w-full outline-none bg-transparent text-sm text-slate-700 placeholder-slate-400"
                     />
                   </div>
-                  {/* Visible Submit Button */}
                   <button
                     type="submit"
                     className="px-5 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold text-xs rounded-full flex items-center gap-1.5 transition-all shrink-0 shadow-sm"
